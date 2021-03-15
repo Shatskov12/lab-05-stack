@@ -63,4 +63,5 @@ class Stack1
  private:
   Node<T> *pHead;
 };
+
 #endif // INCLUDE_FIRST_HPP_

@@ -1,7 +1,7 @@
 // Copyright 2020 Your Name <your_email>
 
-#ifndef INCLUDE_SECOND_HPP
-#define INCLUDE_SECOND_HPP
+#ifndef INCLUDE_SECOND_HPP_
+#define INCLUDE_SECOND_HPP_
 #include <memory>
 #include <iostream>
 #include <string>
@@ -47,7 +47,7 @@ class Stack2
       pHead = new Node<T>(forward<T>(value), forward<Node<T>*>(pHead));
     }
   }
-  const T& head() const{return pHead->GetData();};
+  const T& head() const{return pHead->GetData();}
   T pop(){
     Node<T> *pTemp = pHead->GetPointerPast();
     T out = pHead->GetData();
@@ -69,4 +69,4 @@ class Stack2
   Node<T> *pHead;
 };
 
-#endif  // INCLUDE_SECOND_HPP
+#endif  // INCLUDE_SECOND_HPP_
