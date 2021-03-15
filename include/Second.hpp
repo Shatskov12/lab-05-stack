@@ -1,10 +1,11 @@
+// Copyright 2020 Your Name <your_email>
 
-
-#ifndef LAB_05_STACK_STACK2_H
-#define LAB_05_STACK_STACK2_H
+#ifndef INCLUDE_SECOND_HPP
+#define INCLUDE_SECOND_HPP
 #include <memory>
 #include <iostream>
 #include <string>
+#include <utility>
 
 using std::cout;
 using std::string;
@@ -14,7 +15,7 @@ template <typename T>
 class Node
 {
  public:
-  Node(T a = T(), Node<T> *b = nullptr) {
+  explicit Node(T a = T(), Node<T> *b = nullptr) {
     data = a;
     pPast = b;
   }
@@ -45,7 +46,7 @@ class Stack2
     } else {
       pHead = new Node<T>(forward<T>(value), forward<Node<T>*>(pHead));
     }
-  };
+  }
   const T& head() const{return pHead->GetData();};
   T pop(){
     Node<T> *pTemp = pHead->GetPointerPast();
@@ -53,7 +54,7 @@ class Stack2
     delete pHead;
     pHead = pTemp;
     return out;
-  };
+  }
 
   Stack2(){pHead = nullptr;}
   Stack2(const Stack2&) = delete;
@@ -67,4 +68,5 @@ class Stack2
  private:
   Node<T> *pHead;
 };
-#endif  // LAB_05_STACK_STACK2_H
+
+#endif  // INCLUDE_SECOND_HPP
