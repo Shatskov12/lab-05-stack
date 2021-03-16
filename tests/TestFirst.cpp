@@ -5,7 +5,7 @@ TEST(Example, EmptyTest) {
   EXPECT_TRUE(true);
 }
 
-TEST(Stack1, correct_primitive) {
+TEST(Stack1, CorrectPrimitive) {
   Stack1<int> stack;
   stack.push(10);
   int value1 = 15, value2 = 33;
@@ -19,10 +19,10 @@ TEST(Stack1, correct_primitive) {
   EXPECT_EQ(1200, stack.head());
 }
 
-class My_class {
+class MyClass {
  public:
 
-  My_class(){
+  MyClass(){
     value1 = 0;
     value2 = 0.1;
     value3 = "0";
@@ -32,30 +32,30 @@ class My_class {
   std::string value3;
 };
 
-TEST(Stack1, correct_my_class) {
-  Stack1<My_class> stack;
-  My_class my_class1;
-  My_class my_class2;
-  my_class2.value1 = 15;
-  my_class2.value3 = "1";
-  my_class2.value2 = 1.1;
-  stack.push(my_class1);
-  EXPECT_EQ(my_class1.value2, stack.head().value2);
-  EXPECT_EQ(my_class1.value3, stack.head().value3);
-  EXPECT_EQ(my_class1.value1, stack.head().value1);
-  stack.push(my_class2);
-  EXPECT_EQ(my_class2.value2, stack.head().value2);
-  EXPECT_EQ(my_class2.value3, stack.head().value3);
-  EXPECT_EQ(my_class2.value1, stack.head().value1);
+TEST(Stack1, CorrectMyClass) {
+  Stack1<MyClass> stack;
+  MyClass MyClass1;
+  MyClass MyClass2;
+  MyClass2.value1 = 15;
+  MyClass2.value3 = "1";
+  MyClass2.value2 = 1.1;
+  stack.push(MyClass1);
+  EXPECT_EQ(MyClass1.value2, stack.head().value2);
+  EXPECT_EQ(MyClass1.value3, stack.head().value3);
+  EXPECT_EQ(MyClass1.value1, stack.head().value1);
+  stack.push(MyClass2);
+  EXPECT_EQ(MyClass2.value2, stack.head().value2);
+  EXPECT_EQ(MyClass2.value3, stack.head().value3);
+  EXPECT_EQ(MyClass2.value1, stack.head().value1);
   stack.pop();
-  EXPECT_EQ(my_class1.value2, stack.head().value2);
-  EXPECT_EQ(my_class1.value3, stack.head().value3);
-  EXPECT_EQ(my_class1.value1, stack.head().value1);
+  EXPECT_EQ(MyClass1.value2, stack.head().value2);
+  EXPECT_EQ(MyClass1.value3, stack.head().value3);
+  EXPECT_EQ(MyClass1.value1, stack.head().value1);
 }
 
 TEST(Stack1, type_traits) {
   EXPECT_TRUE(std::is_move_constructible<int>::value);
   EXPECT_TRUE(std::is_move_assignable<int>::value);
-  EXPECT_TRUE(std::is_move_constructible<My_class>::value);
-  EXPECT_TRUE(std::is_move_assignable<My_class>::value);
+  EXPECT_TRUE(std::is_move_constructible<MyClass>::value);
+  EXPECT_TRUE(std::is_move_assignable<MyClass>::value);
 }

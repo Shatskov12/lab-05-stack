@@ -2,7 +2,7 @@
 
 #ifndef INCLUDE_SECOND_HPP_
 #define INCLUDE_SECOND_HPP_
-#include <memory>
+
 #include <iostream>
 #include <string>
 #include <utility>
@@ -33,7 +33,7 @@ class Stack2
 {
  public:
   template <typename ... Args>
-  void push_emplace(Args&&... value){
+  void PushEmplace(Args&&... value){
     if (!pHead){
       pHead = new Node<T>(T(forward<Args>(value)...));
     } else {

@@ -47,9 +47,9 @@ target_link_libraries(demo ${PROJECT_NAME})
 
 if(BUILD_TESTS)
   add_executable(tests
-    # TODO: enum your files and delete this comment
+
           ${CMAKE_CURRENT_SOURCE_DIR}/tests/TestSecond.cpp
-          tests/TestFirst.cpp)
+          ${CMAKE_CURRENT_SOURCE_DIR}/tests/TestFirst.cpp)
   target_link_libraries(tests ${PROJECT_NAME} GTest::gtest_main)
   enable_testing()
   add_test(NAME unit_tests COMMAND tests)
